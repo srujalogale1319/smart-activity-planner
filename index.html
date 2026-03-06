@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Smart Activity Planner</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+</head>
+
+<body>
+
+<!-- VIDEO BACKGROUND -->
+
+<div class="video-container">
+
+<video autoplay muted loop id="weather-video" class="weather-video">
+
+<source id="video-source" src="/static/videos/default.mp4" type="video/mp4">
+
+</video>
+
+<div class="video-overlay"></div>
+
+</div>
+
+
+<!-- MAIN UI -->
+
+<div class="relative z-10 p-10 text-white">
+
+<!-- HEADER -->
+
+<div class="flex justify-between items-center mb-10">
+
+<h1 class="text-2xl font-semibold tracking-wide">
+ACTIVITY HUB
+</h1>
+
+<input
+id="city"
+type="text"
+placeholder="Enter City"
+class="px-6 py-3 rounded-2xl bg-white/80 text-black w-72 outline-none"
+/>
+
+</div>
+
+
+<!-- TOP GRID -->
+
+<div class="grid grid-cols-3 gap-8">
+
+<!-- WEATHER CARD -->
+
+<div class="glass-card p-10 col-span-2">
+
+<h3 class="text-cyan-400 text-sm mb-6 tracking-wider">
+CURRENT CONDITIONS
+</h3>
+
+<h1 id="temp-display" class="text-7xl font-light mb-3">
+--
+</h1>
+
+<p id="condition-text" class="text-white/60 mb-10">
+Search for a city
+</p>
+
+<hr class="border-white/10 mb-6">
+
+<div class="flex gap-20">
+
+<div>
+<p class="text-white/40 text-xs">HUMIDITY</p>
+<p id="humidity-val" class="text-xl font-medium">--</p>
+</div>
+
+<div>
+<p class="text-white/40 text-xs">WIND SPEED</p>
+<p id="wind-val" class="text-xl font-medium">--</p>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ACTIVITY CARD -->
+
+<div class="glass-card p-8 flex flex-col items-center justify-center text-center">
+
+<!-- ACTIVITY ANIMATION -->
+
+<div id="activity-animation" class="mb-4"></div>
+
+<div class="w-14 h-14 rounded-full bg-cyan-500/20 flex items-center justify-center mb-4">
+⚡
+</div>
+
+<h2 id="activity-display" class="text-3xl font-semibold mb-2">
+Activity
+</h2>
+
+<p id="activity-cat" class="text-white/50">
+Recommended activity will appear here
+</p>
+
+</div>
+
+</div>
+
+
+<!-- HOURLY FORECAST -->
+
+<div class="glass-card p-8 mt-10">
+
+<h3 class="text-cyan-400 text-sm mb-6 tracking-wider">
+24-HOUR PREDICTIONS
+</h3>
+
+<div
+id="hourly-container"
+class="flex gap-6 overflow-x-auto scrollbar-hide">
+
+</div>
+
+</div>
+
+
+<!-- EXTRA INFO GRID -->
+
+<div class="grid grid-cols-2 gap-8 mt-10">
+
+<div class="glass-card p-6">
+
+<p class="text-white/40 text-sm mb-2">
+PRESSURE
+</p>
+
+<p id="pressure-val" class="text-2xl font-semibold">
+--
+</p>
+
+</div>
+
+
+<div class="glass-card p-6">
+
+<p class="text-white/40 text-sm mb-2">
+AIR QUALITY
+</p>
+
+<p class="text-green-400 text-2xl font-semibold">
+Excellent
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+
+</html>
